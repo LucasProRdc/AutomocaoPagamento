@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Seja bem vindo{% endblock %}
+
+{% block main %}
+<a href="{% url 'logout' %}">Logout</a>
+    <ul>
+        {% for customer in customers %}
+        <li>
+            <a href="{% url 'customer_update' customer.id %}">{{customer.name}}</a>
+            <a href="{% url 'customer_delete' customer.id %}">delete</a>
+        </li>
+        
+        {% endfor %}
+    </ul>
+    <a href="{% url 'customer_new' %}">New Customer</a>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}formulario cliente{% endblock %}
+
+{% block main %}
+<body>
+    
+    <h1>Tem certeza que deseja excluir o registro abaixo?</h1>
+    <form  method="post">
+
+        {% csrf_token %}
+        {{ form }}
+
+        <input class="btn btn-danger" type="submit" value="Delete">
+    </form>
+{% endblock %}
